@@ -1,0 +1,13 @@
+- clean: [
+        '~',
+        '~/.mutt'
+        ]
+
+- link:
+        ~/.tmux.conf: tmux.conf
+        ~/.zshrc: zshrc
+
+- shell:
+        - [git submodule update --init --recursive, Installing submodules]
+        - [~/.tmux/plugins/tpm/scripts/install_plugins.sh >/dev/null 2>&1, Installing tmux plugins]
+        - ["vim +PlugUpdate +PlugClean! +qa", Installing and updating plugins]
