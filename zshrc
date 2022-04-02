@@ -73,6 +73,11 @@ then
 	source ~/bin/zsh_functions
 fi
 
+if [ -e ~/.zshrc.alias ]
+then
+  source ~/.zshrc.alias
+fi
+
 if [ -e ~/bin/zsh_alias ]
 then
 	source ~/bin/zsh_alias
