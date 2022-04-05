@@ -2,12 +2,14 @@
 
 - create:
   - ~/.config
+  - ~/.tmux
 
 - link:
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
     ~/.zshrc.alias: zshrc.alias
     ~/.config/nvim: .nvim
+    ~/.tmux/start.sh: tmux/start.sh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
