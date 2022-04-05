@@ -10,7 +10,9 @@
     ~/.zshrc.alias: zshrc.alias
     ~/.config/nvim: .nvim
     ~/.tmux/start.sh: tmux/start.sh
+    ~/.fonts: fonts
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - ["nvim +PlugUpdate +PlugClean! +qa", Installing and updating plugins]
+  - [fc-cache -fv, Installing fonts]
