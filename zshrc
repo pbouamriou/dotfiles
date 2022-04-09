@@ -78,6 +78,11 @@ then
   source ~/.zshrc.alias
 fi
 
+if [ -e ~/.zshrc.user ]
+then
+  source ~/.zshrc.user
+fi
+
 if [ -e ~/bin/zsh_alias ]
 then
 	source ~/bin/zsh_alias

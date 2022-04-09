@@ -14,5 +14,5 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ["nvim +PlugUpdate +PlugClean! +qa", Installing and updating plugins]
+  - ["nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'", Installing and updating plugins]
   - [fc-cache -fv, Installing fonts]
