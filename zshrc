@@ -35,7 +35,7 @@ antigen bundle jimeh/zsh-peco-history
 antigen bundle cakecatz/zsh-peco-ghq
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle mafredri/zsh-async
+antigen bundle mafredri/zsh-async@main
 
 IP_SSH_CLIENT=$(echo $SSH_CLIENT | awk '{print $1;}')
 
