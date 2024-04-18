@@ -6,13 +6,11 @@
 
 - link:
     ~/.tmux.conf: tmux.conf
-    ~/.zshrc: zshrc
-    ~/.zshrc.alias: zshrc.alias
-    ~/.config/nvim: .nvim
+    ~/.config/nvim: nvim
+    ~/.zprezto: zprezto
+    ~/.ideavimrc: ideavimrc
     ~/.tmux/start.sh: tmux/start.sh
-    ~/.fonts: fonts
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ["nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'", Installing and updating plugins]
   - [fc-cache -fv, Installing fonts]

@@ -1,0 +1,116 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+set visualbell
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" Leader to space
+noremap <SPACE> <Nop>
+let mapleader = " "
+
+" Reload ideavimrc
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+""" Keep visual selection
+vnoremap < <gv
+vnoremap > >gv
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Multi cursor
+Plug 'terryma/vim-multiple-cursors'
+
+" Default highlighting (see help :highlight and help :highlight-link)
+highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
+highlight link multiple_cursors_visual Visual
+
+"" Map <leader>d to start debug
+map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+map <leader>b <Action>(ToggleLineBreakpoint)
+
+""" Navigate methods
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+
+""" Collapse different regions
+map zc <Action>(CollapseRegion)
+map zo <Action>(ExpandRegion)
+map <leader>zc <Action>(CollapseAllRegions)
+map <leader>zo <Action>(ExpandAllRegions)
+
+map <leader>r <Action>(Refactorings.QuickListPopupAction)
+map <leader>= <Action>(ReformatCode)
+map <leader>o <Action>(OptimizeImports)
+
+map <c-r> <Action>(RecentFiles)
+map <leader>l <Action>(RecentLocations)
+map <leader>h <Action>(LocalHistory.ShowHistory)
+
+nnoremap <c-/> :action FindInPath<CR>
+nnoremap <c-c> :action GotoClass<CR>
+nnoremap <c-f> :action GotoFile<CR>
+nnoremap <c-o> :action GotoSymbol<CR>
+
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gp :action GotoSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>h :action CallHierarchy<CR>
+nnoremap <c-s> :action FileStructurePopup<CR>
+
+""" Building, Testing and Debugging
+nnoremap ,t :action ActivateDebugToolWindow<CR>
+nnoremap ,f :action ChooseDebugConfiguration<CR>
+nnoremap ,d :action ContextDebug<CR>
+nnoremap ,u :action Rerun<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+map <leader>m <Action>(RunAnything)
+
+""" IdeaVim development stuff
+set ideastrictmode
+
+""" Multiple Cursors
+map mc <A-n>
+map mx <A-x>
+map mp <A-p>
+
+""" Mappings
+map <c-z> <Action>(ToggleDistractionFreeMode)
+nnoremap Q :action CloseProject<CR>
+
+""" Window Navigation and Splits
+map <c-\> <Action>(SplitVertically)
+map <c--> <Action>(SplitHorizontally)
+map <c-=> <Action>(UnsplitAll)
+map <leader>en <Action>(EditSourceInNewWindow)
+nnoremap <c-x> :action HideAllWindows<CR>
+map <c-w>m <Action>(MaximizeEditorInSplit)
+map <c-w>+ <Action>(StretchSplitToTop)
+map <c-w>- <Action>(StretchSplitToBottom)
+map <c-w>< <Action>(StretchSplitToLeft)
+map <c-w>> <Action>(StretchSplitToRight)
