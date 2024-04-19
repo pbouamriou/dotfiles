@@ -8,12 +8,12 @@
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim: nvim
     ~/.zprezto: zprezto
-    ~/.zprezto/runcoms/zlogin: .zlogin
-    ~/.zprezto/runcoms/zlogout: .zlogout
-    ~/.zprezto/runcoms/zpreztorc: .zpreztorc
-    ~/.zprezto/runcoms/zprofile: .zprofile
-    ~/.zprezto/runcoms/zshenv: .zshenv
-    ~/.zprezto/runcoms/zshrc: .zshrc
+    ~/.zlogin: zprezto/runcoms/zlogin
+    ~/.zlogout: zprezto/runcoms/zlogout
+    ~/.zpreztorc: zprezto/runcoms/zpreztorc 
+    ~/.zprofile: zprezto/runcoms/zprofile
+    ~/.zshenv: zprezto/runcoms/zshenv
+    ~/.zshrc: zprezto/runcoms/zshrc
     ~/.ideavimrc: ideavimrc
     ~/.tmux/start.sh: tmux/start.sh
 
