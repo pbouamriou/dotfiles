@@ -7,6 +7,7 @@
 - link:
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim: nvim
+    ~/.config/atuin: atuin
     ~/.zprezto: zprezto
     ~/.zlogin: zprezto/runcoms/zlogin
     ~/.zlogout: zprezto/runcoms/zlogout
